@@ -4,9 +4,11 @@
              x:Class="HomeRun.Pages.Rooms">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="APP_HomeRun_Logo.png"></Image>
+            <Grid>
+              
+            </Grid>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

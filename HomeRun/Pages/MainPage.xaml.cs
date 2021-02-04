@@ -19,7 +19,7 @@ namespace HomeRun
         }
         private async void ButtonMainToLogin( object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PushAsync(new HomePage());  //  <-- zur nächsten Seite
         }
     }
 }
