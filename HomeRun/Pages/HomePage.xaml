@@ -4,9 +4,145 @@
              x:Class="HomeRun.Pages.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="APP_HomeRun_Logo.png"></Image>
+
+            <Grid RowSpacing="10"
+                  ColumnSpacing="10"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  Padding="40"
+                  BackgroundColor="Moccasin">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Source="Grundriss.jpeg" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+
+                <BoxView Grid.Column="0"
+                         Grid.ColumnSpan="2"
+                        Color="Transparent" />
+                <Label Text="Kueche"
+                       Grid.ColumnSpan="2"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                <Frame Grid.Column="0"
+                       BorderColor="red"
+                       Grid.ColumnSpan="2"
+                       BackgroundColor="Transparent"/>
+                <!--
+                <Button x:Name="Kueche"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Transparent"
+                        Clicked="RoomButton_Clicked"/>
+-->
+
+                <BoxView Grid.Column="2"
+                        Color="Transparent" />
+                <Label Grid.Column="2"
+                        Text="WC"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <Frame Grid.Column="2"
+                       BorderColor="red"
+                       BackgroundColor="Transparent"/>
+
+                <BoxView Grid.Column="3"
+                        Color="Transparent" />
+                <Label Grid.Column="3"
+                        Text="Bad"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                <Frame Grid.Column="3"
+                       BorderColor="red"
+                       BackgroundColor="Transparent"/>
+
+                <BoxView Grid.Row="1"
+                         Grid.ColumnSpan="2"
+                        Color="Transparent" />
+                <Label Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Text="Esszimmer"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+                <Frame Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       BorderColor="red"
+                       BackgroundColor="Transparent"/>
+
+                <!--<BoxView Grid.Row="1"
+                        Grid.Column="1"
+                        Color="DodgerBlue" />
+                <Label Grid.Row="1"
+                        Grid.Column="1"
+                        Text="Center center"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                -->
+
+                <BoxView Grid.Row="1"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        Color="Transparent" />
+                <Label Grid.Row="1"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        Text="Flur"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                <Frame Grid.Row="1"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="2"
+                       BorderColor="red"
+                       BackgroundColor="Transparent"/>
+
+                <BoxView Grid.Row="2"
+                         Grid.ColumnSpan="2"
+                        Color="Transparent" />
+                <Label Grid.Row="2"
+                       Grid.ColumnSpan="2"
+                        Text="Wohnzimmer"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                <Frame Grid.Row="2"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       BorderColor="red"
+                       BackgroundColor="Transparent"/>
+                <!--
+                <BoxView Grid.Row="2"
+                        Grid.Column="1"
+                        Color="LightBlue" />
+                <Label Grid.Row="2"
+                        Grid.Column="1"
+                        Text="Lower center"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End" />
+                -->
+                <BoxView Grid.Row="2"
+                         Grid.ColumnSpan="2"
+                        Grid.Column="2"
+                        Color="Transparent" />
+                <Label Grid.Row="2"
+                       Grid.ColumnSpan="2"
+                        Grid.Column="2"
+                        Text="Schlafzimmer"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                <Frame Grid.Row="2"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="2"
+                       BorderColor="red"
+                       BackgroundColor="Transparent"/>
+            </Grid>
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
