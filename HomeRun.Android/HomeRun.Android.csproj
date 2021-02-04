@@ -91,9 +91,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Grundriss.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\HomeRun\HomeRun.csproj">
       <Project>{801F2EF8-2FC5-419E-9499-6E40BA06179B}</Project>
       <Name>HomeRun</Name>
@@ -176,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\APP_HomeRun_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Grundriss.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

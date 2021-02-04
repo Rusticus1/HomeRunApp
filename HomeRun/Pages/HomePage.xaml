@@ -22,7 +22,7 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Image Source="Grundriss.jpeg" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+                <Image Source="Grundriss.png" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
 
                 <BoxView Grid.Column="0"
                          Grid.ColumnSpan="2"
