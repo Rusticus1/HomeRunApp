@@ -4,9 +4,11 @@
              x:Class="HomeRun.Pages.LoginPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="APP_Home.png" />
+            <Entry Placeholder="email"
+                   x:Name="UserLoginEmail" />
+            <Entry Placeholder="passwort"
+                   x:Name="UserLoginPassword" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
