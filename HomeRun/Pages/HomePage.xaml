@@ -140,6 +140,7 @@
                        Grid.ColumnSpan="2"
                        BorderColor="red"
                        BackgroundColor="Transparent"/>
+                <Editor Grid.Row="3" Grid.ColumnSpan="4" x:Name="Debug" />
             </Grid>
 
         </StackLayout>

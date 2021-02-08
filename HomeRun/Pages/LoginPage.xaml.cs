@@ -36,13 +36,12 @@ namespace HomeRun.Pages
 
             try
             {
-                var client = new FirebaseAuthClient(config);
-                var user = await client.SignInWithEmailAndPasswordAsync(UserLoginEmail.Text, UserLoginPassword.Text);
+                await FirebaseService.Instance.SignInWithEmailPassword(UserLoginEmail.Text, UserLoginPassword.Text);
                 await Navigation.PushAsync(new HomePage());
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Login", ex.ToString(), "So sad");
+                await DisplayAlert("Login", "Wrong Email/Password", "So sad");
                 Console.WriteLine(ex);
             }
         }

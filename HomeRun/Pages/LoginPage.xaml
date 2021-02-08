@@ -4,6 +4,7 @@
              x:Class="HomeRun.Pages.LoginPage">
     <ContentPage.Content>
         <StackLayout>
+            <Image Source="APP_HomeRun_Logo.png" />
             <Entry Keyboard="Email" Placeholder="User" x:Name="UserLoginEmail" />
             <Entry IsPassword="True" Placeholder="Password" x:Name="UserLoginPassword" />
             <Button Text="Login" Clicked="Button_Clicked" />

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeRun.Android", "HomeRun.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeRun.iOS", "HomeRun.iOS\HomeRun.iOS.csproj", "{54E2EF27-52A5-4573-A3E2-1EA3FAFAA274}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeRun", "HomeRun\HomeRun.csproj", "{801F2EF8-2FC5-419E-9499-6E40BA06179B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeRun", "HomeRun\HomeRun.csproj", "{801F2EF8-2FC5-419E-9499-6E40BA06179B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,5 +62,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2417EB7E-AAAC-4A22-A88A-A7245E61B83F}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$1.ResourceNamePolicy = MSBuild
+		$0.StandardHeader = $2
 	EndGlobalSection
 EndGlobal
