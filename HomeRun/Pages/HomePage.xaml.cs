@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Firebase.Database;
+using System.Reactive.Linq;
+using Firebase.Database.Query;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using HomeRun.Models;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace HomeRun.Pages
 {
@@ -16,5 +18,41 @@ namespace HomeRun.Pages
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var sub = FirebaseService.Instance.GetClient().Child("rooms").AsObservable<Room>().Subscribe(d =>
+            {
+                Room room = d.Object;
+                Console.WriteLine(room);
+
+                foreach (KeyValuePair<string, Models.Device> dev in room.Devices)
+                {
+                    Console.WriteLine(dev.Value.Title + " " + dev.Value.Status);
+                }
+
+                try
+                {
+                    Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Editor textbox = this.FindByName<Editor>("Debug");
+                        textbox.Text = room.Title;
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            });
+        }
+
+        /*void btn1_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Button clickedBtn = (Button)sender;
+
+            Console.WriteLine("Button clicked");
+        }*/
     }
 }

@@ -53,6 +53,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FirebaseDatabase.net">
+      <Version>4.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="FirebaseDatabase.Platform.net">
+      <Version>3.0.0</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
@@ -84,7 +90,8 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HomeRun\HomeRun.csproj">
       <Project>{801F2EF8-2FC5-419E-9499-6E40BA06179B}</Project>
@@ -140,7 +147,7 @@
     <AndroidAsset Include="Assets\APP_HomeRun_Icon-Wasser.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\APP_HomeRun_Logo.png" />
+    <EmbeddedResource Include="Assets\APP_HomeRun_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Bad.png" />
@@ -164,10 +171,63 @@
     <AndroidAsset Include="Assets\WC.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Wohnzimmer.png" />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\APP_HomeRun_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\APP_Home.png" />
+    <AndroidResource Include="Resources\drawable\Grundriss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_unklar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Heizung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Heizung2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Jalousien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Kamera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Klima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Licht.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Mikro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Schloss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Strom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Uhr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_Wasser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_WiFi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\HomeRun_WiFi2.png" />
+  </ItemGroup>
+    <AndroidAsset Include="Assets\Wohnzimmer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties TriggeredFromHotReload="False" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
