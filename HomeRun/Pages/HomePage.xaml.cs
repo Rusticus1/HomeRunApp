@@ -1,8 +1,13 @@
 ﻿using System;
 using Firebase.Database;
+using System.Reactive.Linq;
+using Firebase.Database.Query;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using HomeRun.Models;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace HomeRun.Pages
 {
@@ -12,29 +17,34 @@ namespace HomeRun.Pages
         public HomePage()
         {
             InitializeComponent();
-
-
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-            try
+
+            var sub = FirebaseService.Instance.GetClient().Child("rooms").AsObservable<Room>().Subscribe(d =>
             {
-                this.FindByName<Editor>("Debug").Text = "Loading";
-                FirebaseService.Instance.GetClient().Child("rooms").AsObservable<Room>().Subscribe(d =>
+                Room room = d.Object;
+                Console.WriteLine(room);
+
+                foreach (KeyValuePair<string, Models.Device> dev in room.Devices)
                 {
-                    Console.WriteLine(d.Object.Title);
-                    this.FindByName<Editor>("Debug").Text = d.Object.Title;
-                });
-            } catch(Exception ex)
-            {
-                this.FindByName<Editor>("Debug").Text = "Error";
-
-                Console.WriteLine(ex);
-            }
-
-            Console.WriteLine("Test");
+                    Console.WriteLine(dev.Value.Title);
+                }
+                try
+                {
+                    Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                    {
+                        Editor textbox = this.FindByName<Editor>("Debug");
+                        textbox.Text = room.Title;
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            });
         }
     }
 }

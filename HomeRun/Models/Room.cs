@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 namespace HomeRun.Models
 {
@@ -9,5 +10,8 @@ namespace HomeRun.Models
 
         [JsonProperty("title")]
         public string Title { get; set; }
+
+        [JsonProperty("devices")]
+        public Dictionary<string, Device> Devices { get; set; }
     }
 }

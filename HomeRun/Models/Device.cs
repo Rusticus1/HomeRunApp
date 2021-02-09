@@ -9,5 +9,11 @@ namespace HomeRun.Models
 
         [JsonProperty("title")]
         public string Title { get; set; }
+
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
     }
 }
