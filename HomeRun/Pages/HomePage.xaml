@@ -141,6 +141,9 @@
                        BorderColor="red"
                        BackgroundColor="Transparent"/>
                 <Editor Grid.Row="3" Grid.ColumnSpan="4" x:Name="Debug" />
+                <!-- <Button Grid.Row="4" Grid.ColumnSpan="2" Text="Button 1" x:Name="234234234" Clicked="btn1_Clicked" /> -->
+                <!-- <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Text="Button 2" x:Name="020245418548" Clicked="btn1_Clicked" /> -->
+
             </Grid>
 
         </StackLayout>

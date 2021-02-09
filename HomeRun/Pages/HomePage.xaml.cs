@@ -30,8 +30,9 @@ namespace HomeRun.Pages
 
                 foreach (KeyValuePair<string, Models.Device> dev in room.Devices)
                 {
-                    Console.WriteLine(dev.Value.Title);
+                    Console.WriteLine(dev.Value.Title + " " + dev.Value.Status);
                 }
+
                 try
                 {
                     Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
@@ -46,5 +47,12 @@ namespace HomeRun.Pages
                 }
             });
         }
+
+        /*void btn1_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Button clickedBtn = (Button)sender;
+
+            Console.WriteLine("Button clicked");
+        }*/
     }
 }
