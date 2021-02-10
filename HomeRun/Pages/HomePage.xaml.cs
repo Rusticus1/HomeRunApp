@@ -25,8 +25,6 @@ namespace HomeRun.Pages
         {
             base.OnAppearing();
 
-
-
             var sub = FirebaseService.Instance.GetClient().Child("rooms").AsObservable<Room>().Subscribe(d =>
             {
                 Room room = d.Object;  //wird noch nirgends gespeichert
@@ -37,9 +35,7 @@ namespace HomeRun.Pages
                 foreach (KeyValuePair<string, Models.Device> dev in room.Devices)
                 {
                     Console.WriteLine(dev.Value.Title + " " + dev.Value.Status);
-                }
-                
-
+                }              
                 //try
                 //{
                 //    Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
@@ -54,10 +50,13 @@ namespace HomeRun.Pages
                 //catch (Exception ex)
                 //{
                 //    Console.WriteLine(ex);
-                //}
+                //}                
             });
         }
 
+        // Liste allRooms behinhaltet alle Räume die in der Methode OnAppearing() gespeichert wurden
+        // button name in Xaml wird verglichen mit den cases
+        // neuer Room wird erstellt und je nach Case der Room von der Liste mitgegeben
         private async void RoomButton_Clicked(object sender, EventArgs e)
         {
             var button = sender as Button;

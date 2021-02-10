@@ -5,9 +5,17 @@
     <ContentPage.Content>
         <StackLayout>
             <Image Source="APP_HomeRun_Logo.png"></Image>
-            <Grid>
-                <Label>Rooms Page</Label>
-            </Grid>
+            <Label x:Name="Page" 
+                   Text="Page" 
+                   TextColor="Orange" 
+                   FontSize="45"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <!--<Editor x:Name="Title" />-->
+            <Grid x:Name="DevicesInRoom">
+               
+            </Grid>            
+
 
         </StackLayout>
     </ContentPage.Content>
