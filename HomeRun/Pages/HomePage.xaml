@@ -27,123 +27,102 @@
                 <BoxView Grid.Column="0"
                          Grid.ColumnSpan="2"
                         Color="Transparent" />
-                <Label Text=""
-                       Grid.ColumnSpan="2"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" />
-                <Frame Grid.Column="0"
-                       BorderColor="red"
-                       Grid.ColumnSpan="2"
-                       BackgroundColor="Transparent"/>
-                <!--
-                <Button x:Name="Kueche"
+                <Button ClassId="Kueche"
+                        x:Name="Kueche"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         BackgroundColor="Transparent"
                         Clicked="RoomButton_Clicked"/>
--->
+                <!--<Frame Grid.Column="0"
+                       BorderColor="red"
+                       Grid.ColumnSpan="2"
+                       BackgroundColor="Transparent"/>-->
 
                 <BoxView Grid.Column="2"
                         Color="Transparent" />
-                <Label Grid.Column="2"
-                        Text=""
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"/>
-                <Frame Grid.Column="2"
+                <Button ClassId="WC"
+                        x:Name="WC"
+                        Grid.Column="2"
+                        BackgroundColor="Transparent"
+                        Clicked="RoomButton_Clicked"/>
+                <!--<Frame Grid.Column="2"
                        BorderColor="red"
-                       BackgroundColor="Transparent"/>
+                       BackgroundColor="Transparent"/>-->
 
                 <BoxView Grid.Column="3"
                         Color="Transparent" />
-                <Label Grid.Column="3"
-                        Text=""
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" />
-                <Frame Grid.Column="3"
+                <Button ClassId="Bad"
+                        x:Name="Bad"
+                        Grid.Column="3"
+                        BackgroundColor="Transparent"
+                        Clicked="RoomButton_Clicked"/>
+                <!--<Frame Grid.Column="3"
                        BorderColor="red"
-                       BackgroundColor="Transparent"/>
+                       BackgroundColor="Transparent"/>-->
 
                 <BoxView Grid.Row="1"
                          Grid.ColumnSpan="2"
                         Color="Transparent" />
-                <Label Grid.Row="1"
-                       Grid.ColumnSpan="2"
-                       Text=""
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center" />
-                <Frame Grid.Row="1"
+                <Button ClassId="Esszimmer"
+                        x:Name="Esszimmer"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Transparent"
+                        Clicked="RoomButton_Clicked"/>
+                <!--<Frame Grid.Row="1"
                        Grid.ColumnSpan="2"
                        BorderColor="red"
-                       BackgroundColor="Transparent"/>
-
-                <!--<BoxView Grid.Row="1"
-                        Grid.Column="1"
-                        Color="DodgerBlue" />
-                <Label Grid.Row="1"
-                        Grid.Column="1"
-                        Text="Center center"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" />
-                -->
+                       BackgroundColor="Transparent"/>-->
 
                 <BoxView Grid.Row="1"
                         Grid.Column="2"
                         Grid.ColumnSpan="2"
                         Color="Transparent" />
-                <Label Grid.Row="1"
+                <Button ClassId="Flur"
+                        x:Name="Flur"   
+                        Grid.Row="1"
                         Grid.Column="2"
                         Grid.ColumnSpan="2"
-                        Text=""
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" />
-                <Frame Grid.Row="1"
+                        BackgroundColor="Transparent"
+                        Clicked="RoomButton_Clicked"/>
+                <!--<Frame Grid.Row="1"
                        Grid.Column="2"
                        Grid.ColumnSpan="2"
                        BorderColor="red"
-                       BackgroundColor="Transparent"/>
+                       BackgroundColor="Transparent"/>-->
 
                 <BoxView Grid.Row="2"
                          Grid.ColumnSpan="2"
                         Color="Transparent" />
-                <Label Grid.Row="2"
-                       Grid.ColumnSpan="2"
-                        Text=""
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" />
-                <Frame Grid.Row="2"
+                <Button ClassId="Wohnzimmer"
+                        x:Name="Wohnzimmer"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Transparent"
+                        Clicked="RoomButton_Clicked"/>
+                <!--<Frame Grid.Row="2"
                        Grid.Column="0"
                        Grid.ColumnSpan="2"
                        BorderColor="red"
-                       BackgroundColor="Transparent"/>
-                <!--
-                <BoxView Grid.Row="2"
-                        Grid.Column="1"
-                        Color="LightBlue" />
-                <Label Grid.Row="2"
-                        Grid.Column="1"
-                        Text="Lower center"
-                        HorizontalOptions="Center"
-                        VerticalOptions="End" />
-                -->
+                       BackgroundColor="Transparent"/>-->
+
                 <BoxView Grid.Row="2"
                          Grid.ColumnSpan="2"
                         Grid.Column="2"
                         Color="Transparent" />
-                <Label Grid.Row="2"
-                       Grid.ColumnSpan="2"
+                <Button ClassId="Schlafzimmer"
+                        x:Name="Schlafzimmer"
+                        Grid.Row="2"
                         Grid.Column="2"
-                        Text="Schlafzimmer"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" />
-                <Frame Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Transparent"
+                        Clicked="RoomButton_Clicked"/>
+                <!--<Frame Grid.Row="2"
                        Grid.Column="2"
                        Grid.ColumnSpan="2"
                        BorderColor="red"
-                       BackgroundColor="Transparent"/>
-                <Editor Grid.Row="3" Grid.ColumnSpan="4" x:Name="Debug" />
-                <!-- <Button Grid.Row="4" Grid.ColumnSpan="2" Text="Button 1" x:Name="234234234" Clicked="btn1_Clicked" /> -->
-                <!-- <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Text="Button 2" x:Name="020245418548" Clicked="btn1_Clicked" /> -->
-
+                       BackgroundColor="Transparent"/>-->
+                <!--<Editor Grid.Row="3" Grid.ColumnSpan="4" x:Name="Debug" />-->
             </Grid>
 
         </StackLayout>

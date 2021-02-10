@@ -6,7 +6,7 @@
         <StackLayout>
             <Image Source="APP_HomeRun_Logo.png"></Image>
             <Grid>
-              
+                <Label>Rooms Page</Label>
             </Grid>
 
         </StackLayout>
