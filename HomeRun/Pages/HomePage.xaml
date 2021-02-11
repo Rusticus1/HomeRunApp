@@ -6,7 +6,8 @@
         <StackLayout>
             <Image Source="APP_HomeRun_Logo.png"></Image>
 
-            <Grid RowSpacing="10"
+            <Grid x:Name="RoomGrid"
+                  RowSpacing="10"
                   ColumnSpacing="10"
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand"
