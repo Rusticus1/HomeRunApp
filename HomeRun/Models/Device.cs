@@ -15,5 +15,8 @@ namespace HomeRun.Models
 
         [JsonProperty("type")]
         public string Type { get; set; }
+
+        [JsonProperty("temp")]
+        public string Temp { get; set; }
     }
 }
