@@ -40,30 +40,28 @@ namespace HomeRun.Pages
                             int count = 1;
                             foreach (KeyValuePair<string, Models.Device> dev in updatedRoom.Devices) // weil Dictionary!!
                             {
-                                Console.WriteLine(dev.Value.Title + " " + dev.Value.Status);
                                 if (dev.Value.Type == "heizung")
                                 {
                                     Label label1 = new Label()
                                     {
                                         Text = dev.Value.Title,
-                                        FontSize = 24
+                                        FontSize = 20
                                     };
-                                    double temperatur = double.Parse(dev.Value.Temp);
                                     Stepper stepper = new Stepper()
                                     {
                                         Increment = 0.5,
                                         Minimum = 0,
                                         Maximum = 60,
-                                        Value = temperatur
+                                        Value = double.Parse(dev.Value.Temp),
+                                        VerticalOptions = LayoutOptions.Center,
+                                        HorizontalOptions = LayoutOptions.Center
                                     };
                                     Label label2 = new Label()
                                     {
-                                        //HorizontalOptions = LayoutOptions.Center,
-                                        //VerticalOptions = LayoutOptions.Center,
                                         FontSize = 20,
-                                        Text = "Temp: " + stepper.Value.ToString()
-             
+                                        Text = "   °C " + stepper.Value.ToString()
                                     };
+
                                     grr.Children.Add(label1);
                                     grr.Children.Add(stepper);
                                     grr.Children.Add(label2);
@@ -71,21 +69,23 @@ namespace HomeRun.Pages
                                     label1.SetValue(Grid.ColumnProperty, 0);
                                     stepper.SetValue(Grid.RowProperty, count);
                                     stepper.SetValue(Grid.ColumnProperty, 2);
+                                    stepper.SetValue(Grid.ColumnSpanProperty, 2);
                                     label2.SetValue(Grid.RowProperty, count);
                                     label2.SetValue(Grid.ColumnProperty, 1);
                                     stepper.ValueChanged += async (sender, e) =>
                                     {
-                                        label2.Text = "Temp: " + e.NewValue.ToString();
+                                        label2.Text = "   °C" + e.NewValue.ToString();
                                         await FirebaseService.Instance.GetClient().Child("rooms").Child(d.Key).Child("devices").Child(dev.Key).PutAsync(dev.Value);
                                     };
-                                   count++;
-                                } 
+                                    count++;
+                                }
+
                                 else
                                 {
                                     Label label = new Label()
                                     {
                                         Text = dev.Value.Title,
-                                        FontSize = 26,
+                                        FontSize = 20,
 
                                     };
 
@@ -103,7 +103,7 @@ namespace HomeRun.Pages
                                     label.SetValue(Grid.RowProperty, count);
                                     label.SetValue(Grid.ColumnProperty, 0);
                                     button.SetValue(Grid.RowProperty, count);
-                                    button.SetValue(Grid.ColumnProperty, 2);
+                                    button.SetValue(Grid.ColumnProperty, 3);
 
                                     button.Toggled += async (sender, e) =>
                                     {
