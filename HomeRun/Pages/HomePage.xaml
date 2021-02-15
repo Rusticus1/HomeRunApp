@@ -7,7 +7,7 @@
         <StackLayout>
             <Image Source="APP_HomeRun_Logo.png"></Image>
 
-            <Grid x:Name="MenuGrid"
+            <!--<Grid x:Name="MenuGrid"
                   BackgroundColor="Moccasin">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -35,7 +35,7 @@
                         x:Name="Heizung"
                         Grid.Column="2"
                         BackgroundColor="Transparent"/>
-            </Grid>       
+            </Grid>-->       
             
             <Grid x:Name="RoomGrid"
                   RowSpacing="10"
@@ -59,8 +59,8 @@
                 <BoxView Grid.Column="0"
                          Grid.ColumnSpan="2"
                         Color="Transparent" />
-                <Button ClassId="Kueche"
-                        x:Name="Kueche"
+                <Button ClassId="Küche"
+                        x:Name="Küche"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         BackgroundColor="Transparent"
