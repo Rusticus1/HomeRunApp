@@ -6,6 +6,36 @@
         <StackLayout>
             <Image Source="APP_HomeRun_Logo.png"></Image>
 
+            <Grid x:Name="MenuGrid"
+                  BackgroundColor="Moccasin">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Source="HomeRun_Licht.png"
+                      Grid.Column="0" />
+                <Button ClassId="Lichter"
+                        x:Name="Lichter"
+                        Grid.Column="0"
+                        BackgroundColor="Transparent"/>
+                <Image Source="HomeRun_Jalousien.png"
+                      Grid.Column="1" />
+                <Button ClassId="Jalousie"
+                        x:Name="Jalousie"
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"/>
+                <Image Source="HomeRun_Heizung.png"
+                      Grid.Column="2" />
+                <Button ClassId="Heizung"
+                        x:Name="Heizung"
+                        Grid.Column="2"
+                        BackgroundColor="Transparent"/>
+            </Grid>       
+            
             <Grid x:Name="RoomGrid"
                   RowSpacing="10"
                   ColumnSpacing="10"
