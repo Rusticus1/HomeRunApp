@@ -20,7 +20,7 @@ namespace HomeRun.Pages
         {
             InitializeComponent();
 
-            Label textbox = this.FindByName<Label>("Page");
+            Label textbox = this.FindByName<Label>("Page"); // Label "Page" wird in ZimmerId (Name des Buttons auf HomePage) umbenannt
             textbox.Text = zimmerId;
 
             try
@@ -31,7 +31,7 @@ namespace HomeRun.Pages
                     Console.WriteLine("Got update" + d.Object.Title);
                     if (updatedRoom.Title == zimmerId)
                     {
-                        Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                        Xamarin.Forms.Device.BeginInvokeOnMainThread(() => 
                         {
 
                             Grid grr = (Grid)FindByName("DevicesInRoom");
@@ -42,17 +42,18 @@ namespace HomeRun.Pages
                             {
                                 if (dev.Value.Type == "heizung")
                                 {
+                                    Console.WriteLine(dev.Value.Temp);
                                     Label label1 = new Label()
                                     {
                                         Text = dev.Value.Title,
                                         FontSize = 20
                                     };
                                     Stepper stepper = new Stepper()
-                                    {
+                                    {                                        
                                         Increment = 0.5,
                                         Minimum = 0,
                                         Maximum = 60,
-                                        Value = double.Parse(dev.Value.Temp),
+                                        Value = double.Parse(dev.Value.Temp),  //bis hier funktionierts
                                         VerticalOptions = LayoutOptions.Center,
                                         HorizontalOptions = LayoutOptions.Center
                                     };
@@ -61,20 +62,27 @@ namespace HomeRun.Pages
                                         FontSize = 20,
                                         Text = "   °C " + stepper.Value.ToString()
                                     };
+                                    Console.WriteLine(stepper.Value);
 
-                                    grr.Children.Add(label1);
-                                    grr.Children.Add(stepper);
+                                    grr.Children.Add(label1);                                    
                                     grr.Children.Add(label2);
+                                    grr.Children.Add(stepper);
                                     label1.SetValue(Grid.RowProperty, count);
-                                    label1.SetValue(Grid.ColumnProperty, 0);
+                                    label1.SetValue(Grid.ColumnProperty, 0);                                    
+                                    label2.SetValue(Grid.RowProperty, count);
+                                    label2.SetValue(Grid.ColumnProperty, 1);
                                     stepper.SetValue(Grid.RowProperty, count);
                                     stepper.SetValue(Grid.ColumnProperty, 2);
                                     stepper.SetValue(Grid.ColumnSpanProperty, 2);
-                                    label2.SetValue(Grid.RowProperty, count);
-                                    label2.SetValue(Grid.ColumnProperty, 1);
+                                    
                                     stepper.ValueChanged += async (sender, e) =>
                                     {
-                                        label2.Text = "   °C" + e.NewValue.ToString();
+                                        // bei plus oder minusclick wo wird incremented? neues value muss gespeichert werden
+                                        // stepper.ValueChanged zur DB senden!
+                                        dev.Value.Temp = stepper.Value.ToString();
+
+                                        label2.Text = "   °C" + stepper.Value.ToString();
+                                        //label2.Text = "   °C" + e.NewValue.ToString();
                                         await FirebaseService.Instance.GetClient().Child("rooms").Child(d.Key).Child("devices").Child(dev.Key).PutAsync(dev.Value);
                                     };
                                     count++;
@@ -107,17 +115,21 @@ namespace HomeRun.Pages
 
                                     button.Toggled += async (sender, e) =>
                                     {
-                                        bool isToggled = e.Value;
-
+                                        bool isToggled = e.Value;                                        
                                         if (dev.Value.Status == "off")
                                         {
                                             dev.Value.Status = "on";
+                                            
                                         }
                                         else
                                         {
                                             dev.Value.Status = "off";
+                                            if (dev.Value.Type == "tuer")
+                                            {
+                                                await DisplayAlert("Achtung!", "Die Türe wurde aufgesperrt", "OK");
+                                            }
                                         }
-
+                                       
                                         await FirebaseService.Instance.GetClient().Child("rooms").Child(d.Key).Child("devices").Child(dev.Key).PutAsync(dev.Value);
                                     };
 

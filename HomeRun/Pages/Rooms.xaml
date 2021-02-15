@@ -12,7 +12,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Center"/>
             <!--<Editor x:Name="Title" />-->
-            <Grid x:Name="DevicesInRoom">
+            <Grid x:Name="DevicesInRoom" Padding="10">
                
             </Grid>            
 
