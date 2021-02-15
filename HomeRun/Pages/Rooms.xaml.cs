@@ -31,7 +31,8 @@ namespace HomeRun.Pages
                     Console.WriteLine("Got update" + d.Object.Title);
                     if (updatedRoom.Title == zimmerId)
                     {
-                        Xamarin.Forms.Device.BeginInvokeOnMainThread(() => {
+                        Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
+                        {
 
                             Grid grr = (Grid)FindByName("DevicesInRoom");
                             grr.Children.Clear();
@@ -40,23 +41,84 @@ namespace HomeRun.Pages
                             foreach (KeyValuePair<string, Models.Device> dev in updatedRoom.Devices) // weil Dictionary!!
                             {
                                 Console.WriteLine(dev.Value.Title + " " + dev.Value.Status);
-                                Button button = new Button()
-                                {
-                                    Text = dev.Value.Title,
-                                };
+                                //if else neu
+                                // funktioniert, außer dass bei Heizung noch nichts geklickt werden kann
+                                #region 
+                                //if(dev.Value.Type == "heizung")
+                                //{
 
-                                if (dev.Value.Status == "on")
+                                //}
+                                //else
+                                //{
+                                //    Button button = new Button()
+                                //    {      //hier button styling
+                                //        Text = dev.Value.Title,
+
+                                //    };
+
+                                //    if (dev.Value.Status == "on")
+                                //    {
+                                //        button.BackgroundColor = Color.LightGreen;
+                                //    }
+                                //    else
+                                //    {
+                                //        button.BackgroundColor = Color.Transparent;
+                                //    }
+
+
+                                //    button.SetValue(Grid.RowProperty, count);
+
+                                //    button.Clicked += async (sender, e) =>
+                                //    {
+                                //        if (dev.Value.Status == "off")
+                                //        {
+                                //            dev.Value.Status = "on";
+                                //        }
+                                //        else
+                                //        {
+                                //            dev.Value.Status = "off";
+                                //        }
+                                //        await FirebaseService.Instance.GetClient().Child("rooms").Child(d.Key).Child("devices").Child(dev.Key).PutAsync(dev.Value);
+                                //    };
+                                //    grr.Children.Add(button);
+                                //    count++;
+                                //}    
+                                #endregion
+                                if (dev.Value.Type == "heizung")
                                 {
-                                    button.BackgroundColor = Color.Yellow;
+
                                 }
-
-                                button.SetValue(Grid.RowProperty, count);
-
-                                button.Clicked += async (sender, e) =>
+                                else
                                 {
+                                    Label label = new Label()
+                                    {
+                                        Text = dev.Value.Title,
+                                        FontSize = 26,
+                                        Margin = new Thickness(40, 0, 0, 0)
+                                    };
+                                    Switch button = new Switch()
+                                    {
+                                        OnColor = Color.Orange,
+                                        Margin = new Thickness(20, 0, 60, 0)
+                                        
+                                    };
+                                    if (dev.Value.Status == "on")
+                                    {
+                                        button.IsToggled = true;
+                                    }
+
+                                    label.SetValue(Grid.RowProperty, count);
+                                    label.SetValue(Grid.ColumnProperty, 0);
+                                    button.SetValue(Grid.RowProperty, count);
+                                    button.SetValue(Grid.ColumnProperty, 1);
+                                    button.Toggled += async (sender, e) =>
+                                {
+                                    bool isToggled = e.Value;
                                     if (dev.Value.Status == "off")
                                     {
                                         dev.Value.Status = "on";
+                                        button.ThumbColor = Color.OrangeRed;
+
                                     }
                                     else
                                     {
@@ -64,13 +126,16 @@ namespace HomeRun.Pages
                                     }
                                     await FirebaseService.Instance.GetClient().Child("rooms").Child(d.Key).Child("devices").Child(dev.Key).PutAsync(dev.Value);
                                 };
-                                grr.Children.Add(button);
-                                count++;
+                                    grr.Children.Add(label);
+                                    grr.Children.Add(button);
+                                    count++;
+                                }
                             }
-                        });                    
+                        });
                     }
                 });
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
@@ -82,5 +147,5 @@ namespace HomeRun.Pages
 
         }
     }
-    
+
 }
