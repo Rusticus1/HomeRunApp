@@ -25,15 +25,15 @@ namespace HomeRun.Pages
 
             try
             {
+                // subscribe: Wenn sich hier etwas ändert, werde ich benachrichtigt bzw. dann ladet es erneut.
                 var sub = FirebaseService.Instance.GetClient().Child("rooms").AsObservable<Room>().Subscribe(d =>
                 {
-                    Room updatedRoom = d.Object;
-                    Console.WriteLine("Got update" + d.Object.Title);
-                    if (updatedRoom.Title == zimmerId)
-                    {
+                    Room updatedRoom = d.Object;  //kann jeder Raum sein
+                    Console.WriteLine("Got update" + d.Object.Title);                                   //im debugger mal probieren
+                    if (updatedRoom.Title == zimmerId)  // Betrifft das update meinen Aktuellen Raum?
+                    {                                   // Wenn ja, dann :  , ansonsten wird es ignoriert
                         Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
                         {
-
                             Grid grr = (Grid)FindByName("DevicesInRoom");
                             grr.Children.Clear();
 
@@ -79,12 +79,11 @@ namespace HomeRun.Pages
                                     {
                                         dev.Value.Temp = stepper.Value.ToString();
 
-                                        label2.Text = "   °C" + stepper.Value.ToString();
+                                        label2.Text = "   °C " + stepper.Value.ToString();
                                         await FirebaseService.Instance.GetClient().Child("rooms").Child(d.Key).Child("devices").Child(dev.Key).PutAsync(dev.Value);
                                     };
                                     count++;
                                 }
-
                                 else
                                 {
                                     Label label = new Label()
@@ -93,20 +92,34 @@ namespace HomeRun.Pages
                                         FontSize = 20,
 
                                     };
-
+                                    Label doorlock = new Label()
+                                    {                     
+                                        Text = dev.Value.Status,
+                                        FontSize = 15,
+                                        IsVisible = false,
+                                        VerticalTextAlignment = TextAlignment.Center,                                        
+                                        Margin = new Thickness(30, 0, 0, 0)
+                                        
+                                    };
+                                    if(dev.Value.Type == "tuer")
+                                    {
+                                        doorlock.IsVisible = true;
+                                    }
                                     Switch button = new Switch()
                                     {
                                         Margin = new Thickness(0, 0, 30, 0)
                                         //Text = dev.Value.Title,
                                     };
 
-                                    if (dev.Value.Status == "on")
+                                    if (dev.Value.Status == "on" || dev.Value.Status == "verschlossen")
                                     {
                                         button.IsToggled = true;
                                     }
-
                                     label.SetValue(Grid.RowProperty, count);
                                     label.SetValue(Grid.ColumnProperty, 0);
+                                    doorlock.SetValue(Grid.RowProperty, count);
+                                    doorlock.SetValue(Grid.ColumnProperty, 2);
+                                    doorlock.SetValue(Grid.ColumnSpanProperty, 2);
                                     button.SetValue(Grid.RowProperty, count);
                                     button.SetValue(Grid.ColumnProperty, 3);
 
@@ -117,17 +130,23 @@ namespace HomeRun.Pages
                                         {
                                             dev.Value.Status = "on";
                                         }
+                                        else if (dev.Value.Status == "offen")
+                                        {
+                                            dev.Value.Status = "verschlossen";
+                                        }
                                         else
                                         {
                                             dev.Value.Status = "off";
                                             if (dev.Value.Type == "tuer")
                                             {
+                                                dev.Value.Status = "offen";
                                                 await DisplayAlert("Achtung!", "Die Türe wurde aufgesperrt", "OK");
                                             }
                                         }
                                         await FirebaseService.Instance.GetClient().Child("rooms").Child(d.Key).Child("devices").Child(dev.Key).PutAsync(dev.Value);
                                     };
                                     grr.Children.Add(label);
+                                    grr.Children.Add(doorlock);
                                     grr.Children.Add(button);
                                     count++;
                                 }
@@ -140,12 +159,6 @@ namespace HomeRun.Pages
             {
                 Console.WriteLine(ex);
             }
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
         }
     }
 
