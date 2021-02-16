@@ -15,19 +15,18 @@ namespace HomeRun.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
-        public List<Room> allRooms = new List<Room>();
+        //public List<Room> allRooms = new List<Room>();
         public HomePage()
         {
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-        }
+        // Wenn die Seite erscheint, passiert das kurz bevor die Page dargestellt wird: 
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //}              
 
-        // Liste allRooms behinhaltet alle Räume die in der Methode OnAppearing() gespeichert wurden
-        // button name in Xaml wird verglichen mit den cases
         // neuer Room wird erstellt und je nach Case der Room von der Liste mitgegeben
         private async void RoomButton_Clicked(object sender, EventArgs e)
         {
