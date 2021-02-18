@@ -11,7 +11,11 @@ namespace HomeRun
         {
             InitializeComponent();
 
+            //MainPage = new AppShell();
+
             MainPage = new NavigationPage(new LoginPage());
+
+            //MainPage = new AppShell();
         }
 
         protected override void OnStart()
