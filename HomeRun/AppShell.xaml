@@ -4,26 +4,32 @@
        xmlns:local="clr-namespace:HomeRun.Pages"
        xmlns:pages="clr-namespace:HomeRun.Pages"
        xmlns:models="clr-namespace:HomeRun.Models"
-
+       BackgroundColor="Orange"
+       
        Title="HomeRun"
        x:Class="HomeRun.AppShell">
+    <!--HIER HINTERGRUNDFARBE EINGESTELLT-->
     
     
     <Shell.Resources>
        <ResourceDictionary>
             <Color x:Key="NavigationPrimary">orange</Color>
            <Style x:Key="BaseStyle" TargetType="Element">
-               <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+               <Setter Property="Shell.BackgroundColor" Value="Orange" />
                <Setter Property="Shell.ForegroundColor" Value="Orange" />
                <Setter Property="Shell.TitleColor" Value="White" />
                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-               <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+               <Setter Property="Shell.TabBarBackgroundColor" Value="orange" />
                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
            </Style>
-           <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="orange"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
        </ResourceDictionary>
    </Shell.Resources>
 
@@ -43,15 +49,19 @@
     </TabBar>-->
     <FlyoutItem Route="HomePage"
                     FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="HomePage"
+        <ShellContent Title="Home"
                       ContentTemplate="{DataTemplate pages:HomePage}" />
+    </FlyoutItem>
+    <FlyoutItem Route="DevicePage"
+                    FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Geräte"
+                      ContentTemplate="{DataTemplate pages:DevicePage}" />
     </FlyoutItem>
     <FlyoutItem Route="LoginPage"
                     FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Logout"
                       
                       ContentTemplate="{DataTemplate pages:LoginPage}" />
-                        <!-- hier vielleicht new App?? -->
     </FlyoutItem> 
 
 

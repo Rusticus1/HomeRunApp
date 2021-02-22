@@ -18,7 +18,12 @@ namespace HomeRun.Pages
     {
         public LoginPage()
         {
+            
+            //Application.Current.MainPage = new NavigationPage(new LoginPage()); //müsste dann beim Logout wieder zurück geändert werden
+           
+            
             InitializeComponent();
+
         }
 
 
@@ -46,7 +51,7 @@ namespace HomeRun.Pages
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Login", "Wrong Email/Password", "So sad");
+                await DisplayAlert("Login", "Wrong Email/Password", "Try again");
                 Console.WriteLine(ex);
             }
         }

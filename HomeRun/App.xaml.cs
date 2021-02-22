@@ -13,9 +13,9 @@ namespace HomeRun
 
             //MainPage = new AppShell();
 
-            MainPage = new NavigationPage(new LoginPage());
+            //MainPage = new NavigationPage(new MainPage());
 
-            //MainPage = new AppShell();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

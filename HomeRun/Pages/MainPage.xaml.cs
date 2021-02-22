@@ -15,6 +15,7 @@ namespace HomeRun.Pages
 
         private async void ButtonMainToLogin( object sender, EventArgs e)
         {
+
             await Navigation.PushAsync(new LoginPage());
         }
 
