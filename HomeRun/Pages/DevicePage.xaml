@@ -4,9 +4,18 @@
              x:Class="HomeRun.Pages.DevicePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="APP_HomeRun_Logo.png"></Image>
+            <Label x:Name="Devices" 
+                   Text="Alle Geräte" 
+                   TextColor="Orange" 
+                   FontSize="45"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Grid x:Name="AllDevices"
+                Padding="10">
+                
+            </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

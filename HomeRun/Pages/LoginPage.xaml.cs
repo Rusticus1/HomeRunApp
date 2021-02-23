@@ -51,6 +51,7 @@ namespace HomeRun.Pages
             }
             catch (Exception ex)
             {
+
                 await DisplayAlert("Login", "Wrong Email/Password", "Try again");
                 Console.WriteLine(ex);
             }

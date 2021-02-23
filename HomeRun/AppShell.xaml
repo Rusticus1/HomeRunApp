@@ -4,12 +4,10 @@
        xmlns:local="clr-namespace:HomeRun.Pages"
        xmlns:pages="clr-namespace:HomeRun.Pages"
        xmlns:models="clr-namespace:HomeRun.Models"
-       BackgroundColor="Orange"
-       
+       BackgroundColor="Orange"       
        Title="HomeRun"
        x:Class="HomeRun.AppShell">
-    <!--HIER HINTERGRUNDFARBE EINGESTELLT-->
-    
+    <!--HIER HINTERGRUNDFARBE EINGESTELLT-->    
     
     <Shell.Resources>
        <ResourceDictionary>
@@ -33,8 +31,6 @@
        </ResourceDictionary>
    </Shell.Resources>
 
-
-
     <!--<TabBar>
         <Tab Icon="check.png"
          Title="Todo">
@@ -57,12 +53,13 @@
         <ShellContent Title="Geräte"
                       ContentTemplate="{DataTemplate pages:DevicePage}" />
     </FlyoutItem>
-    <FlyoutItem Route="LoginPage"
+
+    <FlyoutItem Route="MainPage"
                     FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Logout"
                       
-                      ContentTemplate="{DataTemplate pages:LoginPage}" />
-    </FlyoutItem> 
+                      ContentTemplate="{DataTemplate pages:MainPage}" />
+    </FlyoutItem>    
 
 
     <!--<Shell.Resources>
