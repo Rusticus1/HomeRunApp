@@ -41,8 +41,25 @@ namespace HomeRun
 
         public FirebaseClient GetClient()
         {
+            // hier client hinzugefügt
+            //this.client = new FirebaseClient("https://smarthome-50f1c-default-rtdb.europe-west1.firebasedatabase.app");
+
             return instance.client;
         }
+
+        public async void Logout()
+        {
+            try
+            {
+               
+                await this.auth.SignOutAsync();
+                instance = null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        } 
 
         public async Task<Boolean> SignInWithEmailPassword(string email, string password)
         {

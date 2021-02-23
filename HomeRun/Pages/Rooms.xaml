@@ -5,6 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Image Source="APP_HomeRun_Logo.png"></Image>
+            
             <Label x:Name="Page" 
                    Text="Page" 
                    TextColor="Orange" 
