@@ -11,6 +11,9 @@
                 <Setter Property="BarBackgroundColor" Value="orange"/>
                 <Setter Property="BarTextColor" Value="White"/>
             </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="DarkGray"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

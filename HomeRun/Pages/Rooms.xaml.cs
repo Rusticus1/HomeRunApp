@@ -52,7 +52,7 @@ namespace HomeRun.Pages
                                     {
                                         Increment = 0.5,
                                         Minimum = 0,
-                                        Maximum = 60,
+                                        Maximum = 30,
                                         Value = double.Parse(dev.Value.Temp),  //bis hier funktionierts
                                         VerticalOptions = LayoutOptions.Center,
                                         HorizontalOptions = LayoutOptions.Center
