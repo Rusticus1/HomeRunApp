@@ -44,7 +44,7 @@ namespace HomeRun.Pages
                                 Increment = 0.5,
                                 Minimum = 0,
                                 Maximum = 30,
-                                Value = double.Parse(dev.Value.Temp),  //bis hier funktionierts
+                                Value = double.Parse(dev.Value.Temp),  
                                 VerticalOptions = LayoutOptions.Center,
                                 HorizontalOptions = LayoutOptions.End
                             };
@@ -54,15 +54,6 @@ namespace HomeRun.Pages
                                 HorizontalOptions = LayoutOptions.Center,
                                 Text = "   °C " + stepper.Value.ToString()
                             };
-
-                            //if (dev.Value.Status == "on")
-                            //{
-                            //    sw.IsToggled = true;
-                            //}
-                            //else if (dev.Value.Status == "off")
-                            //{
-                            //    sw.IsToggled = false;
-                            //}
 
                             if (initialLoad == true) // = true, wenn es das erste mal die Seite lädt
                             {

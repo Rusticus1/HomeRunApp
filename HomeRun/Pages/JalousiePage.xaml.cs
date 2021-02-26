@@ -12,9 +12,9 @@ using Xamarin.Forms.Xaml;
 namespace HomeRun.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LightsPage : ContentPage
+    public partial class JalousiePage : ContentPage
     {
-        public LightsPage()
+        public JalousiePage()
         {
             InitializeComponent();
 
@@ -23,7 +23,7 @@ namespace HomeRun.Pages
             {
 
                 Room updatedRoom = d.Object;
-                Xamarin.Forms.Device.BeginInvokeOnMainThread( () =>
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(() =>
                 {
                     StackLayout stack = (StackLayout)FindByName("device");
 
@@ -34,6 +34,7 @@ namespace HomeRun.Pages
                         VerticalTextAlignment = TextAlignment.Center
 
                     };
+          
                     if (initialLoad == true)
                     {
                         stack.Children.Add(zimmer);
@@ -42,7 +43,7 @@ namespace HomeRun.Pages
 
                     foreach (KeyValuePair<string, Models.Device> dev in updatedRoom.Devices)
                     {
-                        if (dev.Value.Type == "licht")
+                        if (dev.Value.Type == "jalousie")
                         {
 
                             Label label = new Label()
@@ -88,7 +89,7 @@ namespace HomeRun.Pages
                         }
                     }
                 });
-            });            
+            });
         }
     }
 }

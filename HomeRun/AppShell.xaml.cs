@@ -25,7 +25,9 @@ namespace HomeRun
 
             Routing.RegisterRoute("LightsPage", typeof(LightsPage));
             Routing.RegisterRoute("HeatingPage", typeof(HeatingPage));
+            Routing.RegisterRoute("JalousiePage", typeof(JalousiePage));
             Routing.RegisterRoute("Logout", typeof(MainPage));
+
         }
 
 

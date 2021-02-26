@@ -63,6 +63,11 @@
         <ShellContent Title="Lichter"
                       ContentTemplate="{DataTemplate pages:LightsPage}" />
     </FlyoutItem>
+    <FlyoutItem Route="JalousiePage"
+                    FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Jalousien"
+                      ContentTemplate="{DataTemplate pages:JalousiePage}" />
+    </FlyoutItem>
 
     <FlyoutItem Route="MainPage"
                     FlyoutDisplayOptions="AsMultipleItems">
