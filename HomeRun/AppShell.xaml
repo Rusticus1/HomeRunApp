@@ -28,7 +28,12 @@
                 <Setter Property="BarTextColor" Value="White"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
-       </ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="DarkGray"/>
+            </Style>
+
+
+        </ResourceDictionary>
    </Shell.Resources>
 
     <!--<TabBar>
@@ -48,10 +53,20 @@
         <ShellContent Title="Home"
                       ContentTemplate="{DataTemplate pages:HomePage}" />
     </FlyoutItem>
-    <FlyoutItem Route="DevicePage"
+    <FlyoutItem Route="HeatingPage"
                     FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Geräte"
-                      ContentTemplate="{DataTemplate pages:DevicePage}" />
+        <ShellContent Title="Heizung"
+                      ContentTemplate="{DataTemplate pages:HeatingPage}" />
+    </FlyoutItem>
+    <FlyoutItem Route="LightsPage"
+                    FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Lichter"
+                      ContentTemplate="{DataTemplate pages:LightsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Route="JalousiePage"
+                    FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Jalousien"
+                      ContentTemplate="{DataTemplate pages:JalousiePage}" />
     </FlyoutItem>
 
     <FlyoutItem Route="MainPage"

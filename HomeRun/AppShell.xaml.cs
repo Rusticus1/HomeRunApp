@@ -21,15 +21,13 @@ namespace HomeRun
         {
 
             Routing.RegisterRoute("HomePage", typeof(HomePage));
-            Routing.RegisterRoute("DevicePage", typeof(DevicePage));
-            /// Wenn Login page geklickt wird, muss die MainPage wieder zurück geändert werden;
-            /// 
-            // 1.Application.Current.MainPage = new NavigationPage(new LoginPage());
+            //Routing.RegisterRoute("DevicePage", typeof(DevicePage));
 
-            // 2. App Neustarten, sodass alles neu geladen wird! (so hab ich kein Problem mit der Login page und Appshell()
-           
-
+            Routing.RegisterRoute("LightsPage", typeof(LightsPage));
+            Routing.RegisterRoute("HeatingPage", typeof(HeatingPage));
+            Routing.RegisterRoute("JalousiePage", typeof(JalousiePage));
             Routing.RegisterRoute("Logout", typeof(MainPage));
+
         }
 
 
