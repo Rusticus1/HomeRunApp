@@ -49,7 +49,7 @@ namespace HomeRun.Pages
                             Label label = new Label()
                             {
                                 Text = dev.Value.Title,
-                                VerticalTextAlignment = TextAlignment.End
+                                Margin = new Thickness(30, 0, 0, 0)
                             };
                             Switch sw = new Switch()
                             {

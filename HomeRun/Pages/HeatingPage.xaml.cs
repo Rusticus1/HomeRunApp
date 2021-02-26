@@ -51,6 +51,7 @@ namespace HomeRun.Pages
                             Label label2 = new Label()
                             {
                                 FontSize = 15,
+                                HorizontalOptions = LayoutOptions.Center,
                                 Text = "   °C " + stepper.Value.ToString()
                             };
 
