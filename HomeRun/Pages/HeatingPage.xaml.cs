@@ -23,7 +23,7 @@ namespace HomeRun.Pages
             {
 
                 Room updatedRoom = d.Object;
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+                Xamarin.Forms.Device.BeginInvokeOnMainThread( () =>
                 {
                     StackLayout stack = (StackLayout)FindByName("device");
                                         
