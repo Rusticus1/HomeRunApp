@@ -35,7 +35,8 @@ namespace HomeRun.Pages
                             Label label1 = new Label()
                             {
                                 Text = updatedRoom.Title,
-                                FontSize = 20
+                                FontSize = 20,
+                                VerticalTextAlignment = TextAlignment.Center
                             };
 
                             Stepper stepper = new Stepper()
@@ -45,11 +46,11 @@ namespace HomeRun.Pages
                                 Maximum = 30,
                                 Value = double.Parse(dev.Value.Temp),  //bis hier funktionierts
                                 VerticalOptions = LayoutOptions.Center,
-                                HorizontalOptions = LayoutOptions.Center
+                                HorizontalOptions = LayoutOptions.End
                             };
                             Label label2 = new Label()
                             {
-                                FontSize = 20,
+                                FontSize = 15,
                                 Text = "   °C " + stepper.Value.ToString()
                             };
 

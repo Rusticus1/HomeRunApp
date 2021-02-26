@@ -23,14 +23,15 @@ namespace HomeRun.Pages
             {
 
                 Room updatedRoom = d.Object;
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+                Xamarin.Forms.Device.BeginInvokeOnMainThread( () =>
                 {
                     StackLayout stack = (StackLayout)FindByName("device");
 
                     Label zimmer = new Label()
                     {
                         Text = updatedRoom.Title,
-                        FontSize = 20
+                        FontSize = 20,
+                        VerticalTextAlignment = TextAlignment.Center
 
                     };
                     // 25= Alle Zimmer plus alle Lichter und Buttons im Stack
@@ -47,11 +48,12 @@ namespace HomeRun.Pages
 
                             Label label = new Label()
                             {
-                                Text = dev.Value.Title
+                                Text = dev.Value.Title,
+                                VerticalTextAlignment = TextAlignment.End
                             };
                             Switch sw = new Switch()
                             {
-
+                                Margin = new Thickness(0, 0, 30, 0)
                             };
 
                             if (dev.Value.Status == "on")
