@@ -30,15 +30,6 @@ namespace HomeRun.Pages
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
             
-            var config = new FirebaseAuthConfig
-            {
-                ApiKey = "AIzaSyBIGPP5wtt3bGl4aBMiuMsPiyJxVlbe9Js",
-                AuthDomain = "smarthome-50f1c.firebaseapp.com",
-                Providers = new FirebaseAuthProvider[]
-                {
-                    new EmailProvider()
-                }
-            };
             /// APP SHELL hier eingefügt 
             //Application.Current.MainPage = new NavigationPage(new LoginPage());
             try

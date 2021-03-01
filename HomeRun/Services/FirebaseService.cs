@@ -67,6 +67,7 @@ namespace HomeRun
             {
                 var user = await this.auth.SignInWithEmailAndPasswordAsync(email, password);
                 this.client = new FirebaseClient("https://smarthome-50f1c-default-rtdb.europe-west1.firebasedatabase.app");
+                
                 return true;
             } catch (Exception ex)
             {
